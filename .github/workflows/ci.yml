@@ -1,0 +1,51 @@
+# This doesn't build the binary, but after passing tests
+# a build and deploy is triggered by the infrastructure repo
+
+name: Go - Test & Build
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.github/**'
+  pull_request:
+    paths-ignore:
+      - '.github/**'
+  
+jobs:
+  go:
+    name: Test Go
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.21.x'
+
+      - name: Run Go Tests
+        run: go test -v
+
+      - name: Build Go
+        # build is currently not saved
+        run: go build
+
+  trigger:
+    name: Trigger Redeploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Repository Dispatch
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.GH_DEPLOY_TOKEN_KL }} # requires PAT
+          repository: ddbgio/ddbg
+          event-type: deploy-service
+          client-payload: >
+            {
+              "service": "katlukens",
+              "env": "prod",
+              "ref": "${{ github.ref }}",
+              "sha": "${{ github.sha }}"
+            }
