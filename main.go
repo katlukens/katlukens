@@ -11,7 +11,7 @@ import (
 	"golang.org/x/exp/slog"
 )
 
-const portDefault = "8001"
+const portDefault = "8010"
 
 //go:embed static
 var content embed.FS
