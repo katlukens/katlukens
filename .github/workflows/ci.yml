@@ -39,7 +39,7 @@ jobs:
       - name: Trigger Repository Dispatch
         uses: peter-evans/repository-dispatch@v3
         with:
-          token: ${{ secrets.GH_DEPLOY_TOKEN_KL }} # requires PAT
+          token: ${{ secrets.GH_DISPATCH_TOKEN_KL }} # requires PAT
           repository: ddbgio/ddbg
           event-type: deploy-service
           client-payload: >
