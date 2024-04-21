@@ -32,20 +32,21 @@ jobs:
         # build is currently not saved
         run: go build
 
-  trigger:
-    name: Trigger Redeploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trigger Repository Dispatch
-        uses: peter-evans/repository-dispatch@v3
-        with:
-          token: ${{ secrets.GH_DEPLOY_TOKEN_KL }} # requires PAT
-          repository: ddbgio/ddbg
-          event-type: deploy-service
-          client-payload: >
-            {
-              "service": "katlukens",
-              "env": "prod",
-              "ref": "${{ github.ref }}",
-              "sha": "${{ github.sha }}"
-            }
+## when we ran this we got the error "Parameter token or opts.auth is required", need to fix
+  # trigger:
+  #   name: Trigger Redeploy
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Trigger Repository Dispatch
+  #       uses: peter-evans/repository-dispatch@v3
+  #       with:
+  #         token: ${{ secrets.GH_DISPATCH_TOKEN_KL }} # requires PAT
+  #         repository: ddbgio/ddbg
+  #         event-type: deploy-service
+  #         client-payload: >
+  #           {
+  #             "service": "katlukens",
+  #             "env": "prod",
+  #             "ref": "${{ github.ref }}",
+  #             "sha": "${{ github.sha }}"
+  #           }
