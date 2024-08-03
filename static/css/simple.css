@@ -35,6 +35,7 @@
   
 @media (min-width: 40em) {
 :root {
+    --fs-100: 0.75rem;
     --fs-200: 1rem;
     --fs-300: 1.375rem;
     --fs-400: 1.75rem;
@@ -67,7 +68,6 @@ ol[class] {
     padding: 0;
 }
 
-
 /* custom styles */
 body {
     background: var(--clr-primary-300);
@@ -81,77 +81,51 @@ a {
 }
 
 .container {
-    /* display: grid; */
+    display: grid;
     place-items: center;
     text-align: center;
     padding: 0 var(--spacer);
     max-width: 60rem;
-    margin: 7vh auto 4vh;
+    margin: 15vh auto 4vh;
     gap: 2rem;
 }
 
-.my_name {
+.name {
     font-size: var(--fs-900);
     font-weight: var(--fw-900);
     font-family: var(--ff-display);
 }
 
-h5 {
+.title {
     font-family: var(--ff-serif);
     color: var(--clr-neutral-300);
 }
 
-
-.split {
-    margin-bottom: 1rem;
-}
-
-.dice {
+.project {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.prompt {
-    display: flex;
+    flex: 1;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
+    gap: 1rem;
+    /* border: 1px solid red; */
+    margin: 2rem;
 }
 
-
-h6 {
+.project a {
     font-family: var(--ff-sans);
-    font-size: var(--fs-600);
-    font-weight: var(--fw-700);
     color: var(--clr-neutral-100);
-    padding-top: 2rem;
-    padding-bottom: .75rem;
+    gap: 1rem;
 }
 
-h6:hover {
+.project a:hover {
     color: var(--clr-neutral-200);
 }
 
-/* .square {
-    display: flex;
-    height: 6rem;
-    aspect-ratio: 1/1;
-    align-items: center;
-    justify-content: center;
-    background: var(--clr-primary-400);
-    border-radius: .5rem;
-    box-shadow: .25rem 1rem .5rem #252C34, .2rem .45rem .5rem white inset, 0rem -.05rem .25rem white inset;
-} */
-
-.d6 {
-    font-size: var(--fs-300);
+.project p {
     font-family: var(--ff-serif);
-    font-weight: var(--fw-700);
     color: var(--clr-neutral-300);
-    text-align: center;
-    text-decoration: none;
-    margin: .5rem;
+    font-size: var(--fs-300);
 }
 
 .btn-group {
@@ -177,7 +151,31 @@ h6:hover {
     color: var(--clr-primary-300);
     border: 2px solid var(--clr-primary-300);
     cursor: pointer;
-    /* border:none; */
+}
+
+.corner {
+    height: 5rem;
+  }
+
+  .corner::before {
+    content: '';
+    position: absolute;
+    width: 20rem;
+    height: 10rem;
+    /* border-style: solid; */
+    color: transparent;
+    top: 0;
+    left: 0;
+    background: repeating-linear-gradient(
+        -27deg,
+        var(--clr-neutral-200),
+        var(--clr-neutral-200) 6rem,
+        var(--clr-neutral-100) 13rem
+        /* var(--clr-neutral-300) 13rem */
+      );
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    /* border-width: 10rem 20rem 0 0;
+    border-color: var(--clr-neutral-200) transparent transparent transparent; */
 }
 
 @media (min-width: 40em){
@@ -191,10 +189,6 @@ h6:hover {
         justify-content: center;
     }
     
-    .dice {
-        padding: 0 4rem;
-    }
-
     .btn-group {
         display: flex;
         flex-direction: row;
