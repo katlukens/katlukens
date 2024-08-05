@@ -154,7 +154,10 @@ a {
 }
 
 .corner {
-    height: 5rem;
+    position: static;
+    /* overflow: hidden; */
+    /* height: 5rem; */
+    /* width: 100%; */
   }
 
   .corner::before {
@@ -162,21 +165,41 @@ a {
     position: absolute;
     width: 20rem;
     height: 10rem;
-    /* border-style: solid; */
     color: transparent;
     top: 0;
     left: 0;
     background: repeating-linear-gradient(
-        -27deg,
+        -26.5deg,
         var(--clr-neutral-200),
-        var(--clr-neutral-200) 6rem,
-        var(--clr-neutral-100) 13rem
-        /* var(--clr-neutral-300) 13rem */
+        var(--clr-neutral-200) 3.25rem,
+        var(--clr-neutral-100) 3.25rem,
+        var(--clr-neutral-100) 6.25rem,
+        var(--clr-neutral-300) 6.25rem,
+        var(--clr-neutral-300) 8.9rem
       );
     clip-path: polygon(0 0, 100% 0, 0 100%);
-    /* border-width: 10rem 20rem 0 0;
-    border-color: var(--clr-neutral-200) transparent transparent transparent; */
 }
+
+/* .corner::after {
+    content: '';
+    position: absolute;
+    width: 20rem;
+    height: 10rem;
+    color: transparent;
+    bottom: 0;
+    right: 0;
+    background: repeating-linear-gradient(
+        153.5deg,
+        var(--clr-neutral-200),
+        var(--clr-neutral-200) 3.25rem,
+        var(--clr-neutral-100) 3.25rem,
+        var(--clr-neutral-100) 6.25rem,
+        var(--clr-neutral-300) 6.25rem,
+        var(--clr-neutral-300) 8.9rem
+      );
+    clip-path: polygon(100% 100%, 0 100%, 100% 0);
+} */
+
 
 @media (min-width: 40em){
 
