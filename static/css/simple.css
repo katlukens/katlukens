@@ -55,8 +55,8 @@
     margin: 0;
 }
 
+
 body {
-    line-height: 1;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -75,6 +75,14 @@ body {
     font-family: var(--ff-serif);
     color: var(--clr-neutral-100);
 }
+
+main {
+    flex: 1; /* This makes the main content take up the remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically if needed */
+    align-items: center; /* Center content horizontally if needed */
+  }
 
 a {
     text-decoration: none;
@@ -110,6 +118,7 @@ a {
     gap: 1rem;
     /* border: 1px solid red; */
     margin: 2rem;
+    line-height: 1;
 }
 
 .project a {
@@ -133,6 +142,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0 0 4.5rem;
 }
 
 .btn {
@@ -164,7 +174,7 @@ a {
     content: '';
     position: absolute;
     width: 20rem;
-    height: 10rem;
+    height: 9.9rem;
     color: transparent;
     top: 0;
     left: 0;
@@ -179,32 +189,37 @@ a {
       );
     clip-path: polygon(0 0, 100% 0, 0 100%);
 }
+ 
+.rt_corner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
 
-/* .corner::after {
+.rt_corner::after {
     content: '';
     position: absolute;
     width: 20rem;
-    height: 10rem;
+    height: 9.9rem;
     color: transparent;
     bottom: 0;
     right: 0;
     background: repeating-linear-gradient(
-        153.5deg,
-        var(--clr-neutral-200),
-        var(--clr-neutral-200) 3.25rem,
-        var(--clr-neutral-100) 3.25rem,
-        var(--clr-neutral-100) 6.25rem,
-        var(--clr-neutral-300) 6.25rem,
-        var(--clr-neutral-300) 8.9rem
+        -26.5deg,
+        var(--clr-neutral-300),
+        var(--clr-neutral-300) 2.75rem,
+        var(--clr-neutral-100) 2.75rem,
+        var(--clr-neutral-100) 5.75rem,
+        var(--clr-neutral-200) 5.75rem,
+        var(--clr-neutral-200) 10rem
       );
-    clip-path: polygon(100% 100%, 0 100%, 100% 0);
-} */
-
+      clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
 
 @media (min-width: 40em){
 
     .container {
-        margin: 25vh auto 4vh;
+        margin: 20vh auto 4vh;
     }
     
     .split {
@@ -216,6 +231,7 @@ a {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        padding: 0 0 6rem;
     }
     
 }
