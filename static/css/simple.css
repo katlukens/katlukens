@@ -11,6 +11,7 @@
     --fs-500: 1.75rem;
     --fs-600: 2rem;
     --fs-700: 2.125rem;
+    --fs-800: 3rem;
     --fs-900: 7rem;
 
     --fw-200: 200;
@@ -19,9 +20,9 @@
     --fw-700: 700;
     --fw-900: 900;
 
-    --clr-neutral-100: #e6e3f6;
-    --clr-neutral-200: #a9585f;
-    --clr-neutral-300: #4b7ea9;
+    --clr-neutral-100: #f9f1f6;
+    --clr-neutral-200: #f3c262;
+    --clr-neutral-300: #ec9a86;
     --clr-neutral-400: ;
     --clr-neutral-500: ;
     --clr-neutral-900: ;
@@ -31,6 +32,12 @@
   
     --br: 1rem;
     --spacer: 1rem;
+
+    /* first color pallete
+        background: #200820
+        name text: #e6e3f6
+        support text: #6aa0ce
+        buttons: cc6f77 */
 }
   
 @media (min-width: 40em) {
@@ -40,7 +47,7 @@
     --fs-300: 1.375rem;
     --fs-400: 1.75rem;
     --fs-500: 2.125rem;
-    --fs-600: 2.75rem;
+    --fs-600: 3rem;
     --fs-700: 4.25rem;
     --fs-900: 8rem;
 }
@@ -76,14 +83,6 @@ body {
     color: var(--clr-neutral-100);
 }
 
-main {
-    flex: 1; /* This makes the main content take up the remaining space */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically if needed */
-    align-items: center; /* Center content horizontally if needed */
-  }
-
 a {
     text-decoration: none;
 }
@@ -95,18 +94,22 @@ a {
     padding: 0 var(--spacer);
     max-width: 60rem;
     margin: 15vh auto 4vh;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .name {
     font-size: var(--fs-900);
     font-weight: var(--fw-900);
     font-family: var(--ff-display);
+    line-height: 1;
+    padding: 2rem;
 }
 
 .title {
     font-family: var(--ff-serif);
     color: var(--clr-neutral-300);
+    font-size: var(--fs-400);
+    line-height: 2;
 }
 
 .project {
@@ -124,6 +127,7 @@ a {
 .project a {
     font-family: var(--ff-sans);
     color: var(--clr-neutral-100);
+    font-size: var(--fs-800);
     gap: 1rem;
 }
 
@@ -216,10 +220,15 @@ a {
       clip-path: polygon(100% 100%, 0 100%, 100% 0);
 }
 
-@media (min-width: 40em){
+@media (min-width: 40em) and (min-height: 40em) {
 
     .container {
-        margin: 20vh auto 4vh;
+        margin: 15vh auto 4vh;
+        line-height: .75;
+    }
+
+    .name {
+        padding: 0;
     }
     
     .split {
@@ -233,5 +242,12 @@ a {
         justify-content: center;
         padding: 0 0 6rem;
     }
+
+    .corner::before {
+        position: fixed;
+    }
     
+    .rt_corner::after {
+        position: fixed;
+    }
 }
