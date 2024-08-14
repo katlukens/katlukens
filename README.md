@@ -1,15 +1,5 @@
 # Kat Lukens
 
-## skills
-- designer with art training
-- skilled in `git` source control, issue tracking, project management
-- great deal of composure
-- sense of urgency and ownership
-- built the projects linked here
- 
-## background
-- looking to change careers
-- completed CS50
-- experience in people talkin'
-- team leader with management experience
-- experience as a subject matter expert in wine, board games, and coffee
+Artist and designer with a background in diverse media including theatre and fiber arts. Skilled in `git` source control, issue tracking and project management. Expirenced colaberator with urgency and a sense of ownership.
+
+Completed the Harvard/edX [CS50x](https://www.edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science) course to initate a career change into front-end develpment. My background in hospitality has given me more than ten years of experience interacting with people, team leading and management, and serving as a subject matter expert for colleagues and guests. 
