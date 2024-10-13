@@ -1,5 +1,5 @@
 :root {
-    --ff-serif: 'Playfair', serif;
+    --ff-serif: 'Lora', serif;
     --ff-sans: 'Big Shoulders Text', sans-serif;
     --ff-display: 'Big Shoulders Inline Display', sans-serif;
 
@@ -48,7 +48,7 @@
     --fs-400: 1.75rem;
     --fs-500: 2.125rem;
     --fs-600: 3rem;
-    --fs-700: 4.25rem;
+    --fs-700: 4rem;
     --fs-900: 8rem;
 }
 }
@@ -91,9 +91,9 @@ a {
     display: grid;
     place-items: center;
     text-align: center;
-    padding: 0 var(--spacer);
+    padding: var(--spacer);
     max-width: 60rem;
-    margin: 15vh auto 4vh;
+    margin: 30vh auto 4vh;
     gap: 1.5rem;
 }
 
@@ -102,7 +102,6 @@ a {
     font-weight: var(--fw-900);
     font-family: var(--ff-display);
     line-height: 1;
-    padding: 2rem;
 }
 
 .title {
@@ -127,7 +126,7 @@ a {
 .project a {
     font-family: var(--ff-sans);
     color: var(--clr-neutral-100);
-    font-size: var(--fs-800);
+    font-size: var(--fs-600);
     gap: 1rem;
 }
 
@@ -142,15 +141,15 @@ a {
 }
 
 .btn-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 0 4.5rem;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    padding: 0 0 7.5rem;
 }
 
 .btn {
-    margin: 1.5rem 1.5rem;
+    margin: 1.5rem 1rem;
     padding: .75rem 1rem .4rem;
     background: var(--clr-primary-300);
     color: var(--clr-neutral-200);
@@ -250,7 +249,7 @@ a {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        padding: 0 0 6rem;
+        padding: 0 0 4rem;
     }
 
     .corner::before {
